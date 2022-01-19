@@ -42,6 +42,9 @@ GROUP BY u.id HAVING COUNT(ub.user_id)=2 AND COUNT(DISTINCT(b.author)) = 1
 
     http://localhost
 
+Bearer токен для авторизации:
+
+    USe9JAB8T1DK_osubjVNXvzCcGyiqnpr3PQYx27h-0LIaw6Olt4d5ZgkRHfEmWFM
 
 2.1 Использование метода `rates`
 -------------------------------
