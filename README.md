@@ -42,10 +42,6 @@ GROUP BY u.id HAVING COUNT(ub.user_id)=2 AND COUNT(DISTINCT(b.author)) = 1
 
     http://localhost
 
-Phpmyadmin будет доступен по адресу:
-
-    http://localhost:8888
-
 
 2.1 Использование метода `rates`
 -------------------------------
