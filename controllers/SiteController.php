@@ -167,7 +167,7 @@ class SiteController extends Controller
             if (!(array_key_exists($currency_to, ApiModel::getAllData($input))||$currency_to=='BTC')){
                 return self::apiRender(['error'=>'invalid currency_to']);
             }
-            if ($currency_from=='BTC'&&$currency_to=='BTC'){
+            if ((($currency_from==$currency_to)||($currency_from!=='BTC'&&$currency_to!=="BTC"))){
                 return self::apiRender(['error'=>'invalid currency_to or currency_from']);
             }
             if (isset($currency_to)&&isset($currency_from)&&isset($value)){
