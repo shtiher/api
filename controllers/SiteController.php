@@ -136,13 +136,19 @@ class SiteController extends Controller
         if (!ApiModel::checkToken(substr(Yii::$app->request->headers->get('Authorization'), 7))){
             return self::apiRender(['error'=>'invalid token']);
         }
-        if (!ApiModel::getTicker()){
+        if (!get_headers('https://blockchain.info/ticker')[0]=='HTTP/1.1 200 OK'){
             return self::apiRender(['error'=>'blockchain.info is offline']);
         }
         if (!array_key_exists('last', ApiModel::getTicker()['RUB'])){
             return self::apiRender(['error'=>'invalid input data']);
         }
-        $input = ApiModel::getTicker();
+        $input = json_decode(
+            file_get_contents('https://blockchain.info/ticker'),
+            true
+        );
+        
+
+
         if (Yii::$app->request->isGet&&$method == 'rates') {
             if (!$currency) {
                 return self::apiRender(ApiModel::getAllData($input));

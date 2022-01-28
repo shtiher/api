@@ -1,0 +1,42 @@
+{
+  "comment": "Schema for https://blockchain.info/ticker",
+  "type": "object",
+  "patternProperties": {
+    "^[A-Z]{3}$": {
+      "type": "object",
+      "properties": {
+        "15m": {
+          "$ref": "#/definitions/positive_number"
+        },
+        "last": {
+          "$ref": "#/definitions/positive_number"
+        },
+        "buy": {
+          "$ref": "#/definitions/positive_number"
+        },
+        "sell": {
+          "$ref": "#/definitions/positive_number"
+        },
+        "symbol": {
+          "type": "string",
+          "pattern": "^[A-Z]{3}$"
+        }
+      },
+      "required": [
+        "15m",
+        "last",
+        "buy",
+        "sell",
+        "symbol"
+      ]
+    }
+  },
+  "additionalProperties": false,
+  "definitions": {
+    "positive_number": {
+      "type": "number",
+      "minimum": 0,
+      "exclusiveMinimum": true
+    }
+  }
+}

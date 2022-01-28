@@ -3,10 +3,8 @@
 
 namespace app\models;
 
-use Yii;
 use yii\base\ErrorException;
 use yii\base\Model;
-use app\controllers\SiteController;
 
 
 class apiModel extends Model
