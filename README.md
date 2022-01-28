@@ -45,7 +45,10 @@ GROUP BY u.id HAVING COUNT(ub.user_id)=2 AND COUNT(DISTINCT(b.author)) = 1
 Bearer токен для авторизации:
 
     USe9JAB8T1DK_osubjVNXvzCcGyiqnpr3PQYx27h-0LIaw6Olt4d5ZgkRHfEmWFM
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2a82d9dd9670955fe3eebfa6315c84b19c9f462b
 
 2.1 Использование метода `rates`
 -------------------------------
